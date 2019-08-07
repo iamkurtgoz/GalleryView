@@ -45,12 +45,20 @@ import java.util.ArrayList;
 
 public class GalleryViewFragment extends Fragment implements PathAdapter.PathClickListener, MediaAdapter.MediaClickListener {
 
+    public static final String ALL_MEDIA = "ALL_MEDIA";
+    public static final String ONLY_IMAGE = "ONLY_IMAGE";
+    public static final String ONLY_GIF = "ONLY_GIF";
+    public static final String ONLY_VIDEO = "ONLY_VIDEO";
+    public static final String ONLY_IMAGE_AND_GIF = "ONLY_IMAGE_AND_GIF";
+    private static String MEDIA_TYPE = ALL_MEDIA;
+
     private View view;
     private ProgressBar progressBarMedia;
     private LinearLayout layoutSelectMediaContainer;
     private static GalleryViewListener galleryViewListener;
 
-    public static GalleryViewFragment with(GalleryViewListener listener){
+    public static GalleryViewFragment with(String allMedia, GalleryViewListener listener){
+        MEDIA_TYPE = allMedia;
         galleryViewListener = listener;
         return new GalleryViewFragment();
     }
@@ -115,7 +123,7 @@ public class GalleryViewFragment extends Fragment implements PathAdapter.PathCli
 
             @Override
             protected ArrayList<MediaModel> doInBackground(ArrayList<MediaModel>... arrayLists) {
-                return new Tools().getMediaList(path);
+                return new Tools().getMediaList(MEDIA_TYPE, path);
             }
 
             @Override

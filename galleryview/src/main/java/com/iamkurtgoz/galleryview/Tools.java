@@ -66,8 +66,19 @@ public class Tools {
         return false;
     }
 
-    private final String[] okFileExtensions =  new String[] {"3gp", "mp4", "jpg", "png", "gif","jpeg"};
-    public ArrayList<MediaModel> getMediaList(String path){
+    private String[] okFileExtensions = null;
+    public ArrayList<MediaModel> getMediaList(String MEDIA_TYPE, String path){
+        if (MEDIA_TYPE.equalsIgnoreCase(GalleryViewFragment.ALL_MEDIA)){
+            okFileExtensions =  new String[] {"3gp", "mp4", "jpg", "png", "gif","jpeg"};
+        } else if (MEDIA_TYPE.equalsIgnoreCase(GalleryViewFragment.ONLY_IMAGE)){
+            okFileExtensions =  new String[] {"jpg", "png","jpeg"};
+        } else if (MEDIA_TYPE.equalsIgnoreCase(GalleryViewFragment.ONLY_IMAGE_AND_GIF)){
+            okFileExtensions =  new String[] {"jpg", "png", "gif","jpeg"};
+        } else if (MEDIA_TYPE.equalsIgnoreCase(GalleryViewFragment.ONLY_GIF)){
+            okFileExtensions =  new String[] {"gif"};
+        } else if (MEDIA_TYPE.equalsIgnoreCase(GalleryViewFragment.ONLY_VIDEO)){
+            okFileExtensions =  new String[] {"3gp", "mp4"};
+        }
         ArrayList<MediaModel> arrayList = new ArrayList<>();
         File[] files = new File(path).listFiles();
         if (files == null) return arrayList;

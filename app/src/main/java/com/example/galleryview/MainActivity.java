@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements GalleryViewListen
         Dexter.withActivity(this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse response) {
-                replaceFragment(GalleryViewFragment.with(MainActivity.this));
+                replaceFragment(GalleryViewFragment.with(GalleryViewFragment.ONLY_IMAGE,MainActivity.this));
             }
 
             @Override

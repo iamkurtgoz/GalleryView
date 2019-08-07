@@ -9,8 +9,8 @@ Add it in your root build.gradle at the end of repositories:
 ```
 allprojects {
     repositories {
-    ...
-    maven { url 'https://jitpack.io' }
+        ...
+        maven { url 'https://jitpack.io' }
     }
 }
 ```
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements GalleryViewListen
 ```
 FragmentManager fm = getSupportFragmentManager();
 FragmentTransaction tr = fm.beginTransaction();
-tr.replace(R.id.activity_main_container, GalleryViewFragment.with(MainActivity.this));
+tr.replace(R.id.activity_main_container, GalleryViewFragment.with(GalleryViewFragment.ONLY_IMAGE, MainActivity.this));
 tr.commitAllowingStateLoss();
 ```
 ### Contact : iamkurtgoz@gmail.com
