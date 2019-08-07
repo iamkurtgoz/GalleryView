@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iamkurtgoz.galleryview.view.SquareRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/media_card_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ripple">
+
+
+    <ImageView
+        android:id="@+id/list_item_media_row_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <ProgressBar
+        android:id="@+id/list_item_media_row_progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/list_item_media_row_textMediaType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IMAGE"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:gravity="center"
+        android:padding="5dp"
+        android:layout_gravity="bottom|end"
+        android:textSize="10sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+</com.iamkurtgoz.galleryview.view.SquareRelativeLayout>

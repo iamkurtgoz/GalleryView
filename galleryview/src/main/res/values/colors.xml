@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#607D8B</color>
+    <color name="primary_dark">#455A64</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="black_opacity_25">#40000000</color>
+    <color name="trans">#00000000 </color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="md_grey_500">#9E9E9E</color>
+    <color name="md_amber_500">#FFC107</color>
+
+    <color name="transparent_md_amber_500">#99FFC107</color>
+</resources>
