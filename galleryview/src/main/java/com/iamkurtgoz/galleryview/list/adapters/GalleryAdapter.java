@@ -54,10 +54,11 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
             holder.imgHeader.setImageResource(R.drawable.galleryview_ic_folder_white);
             holder.textDetail.setText(model.getFileItemCount() + " " + context.getString(R.string.file));
         } else {
+            holder.textExt.setText(getExt(model.getAbsolutePath()));
+            holder.textDetail.setText(model.getSize());
             RequestOptions options = new RequestOptions();
             options.centerCrop();
             String fileMediaType = GalleryTools.with(context).getMimeTypeSplit(model.getFile())[0];
-            holder.textExt.setText(getExt(model.getAbsolutePath()));
             if (fileMediaType.equalsIgnoreCase("image")){
                 holder.textExt.setText("");
                 Glide.with(context).load(model.getFile()).apply(options).into(holder.imgHeader);

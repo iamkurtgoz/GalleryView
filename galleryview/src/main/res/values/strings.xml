@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">My Library</string>
-    <string name="select">Seç</string>
-    <string name="root_dir">Ana Dizin</string>
-    <string name="image_selected">Media dosyası seçildi.</string>
-    <string name="remove">Kaldır</string>
-    <string name="file">Dosya</string>
+    <string name="file">file</string>
 </resources>

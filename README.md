@@ -3,7 +3,8 @@
 
 [![](https://jitpack.io/v/iamkurtgoz/GalleryView.svg)](https://jitpack.io/#iamkurtgoz/GalleryView)
 
-![](ss/1.png) ![](ss/2.png)
+![](ss/1.png = 100x200)
+![](ss/2.png = 100x300)
 
 ## Setup
 ### Step 1. Add the JitPack repository to your build file
