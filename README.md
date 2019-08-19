@@ -3,7 +3,7 @@
 
 [![](https://jitpack.io/v/iamkurtgoz/GalleryView.svg)](https://jitpack.io/#iamkurtgoz/GalleryView)
 
-![](ss/1.png)
+![](ss/1.png) ![](ss/2.png)
 
 ## Setup
 ### Step 1. Add the JitPack repository to your build file
