@@ -1,20 +1,15 @@
 package com.example.galleryview;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.iamkurtgoz.galleryview.GalleryViewFragment;
-import com.iamkurtgoz.galleryview.GalleryViewListener;
-import com.iamkurtgoz.galleryview.list.models.MediaModel;
+import com.iamkurtgoz.galleryview.GalleryActivity;
+import com.iamkurtgoz.galleryview.tools.GalleryMediaType;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -22,7 +17,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-public class MainActivity extends AppCompatActivity implements GalleryViewListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements GalleryViewListen
         Dexter.withActivity(this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE).withListener(new PermissionListener() {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse response) {
-                replaceFragment(GalleryViewFragment.with(GalleryViewFragment.ONLY_IMAGE,MainActivity.this));
+                GalleryActivity.start(MainActivity.this, GalleryMediaType.IMAGE_VIDEO);
             }
 
             @Override
@@ -48,15 +43,20 @@ public class MainActivity extends AppCompatActivity implements GalleryViewListen
 
     }
 
-    private void replaceFragment(@NonNull Fragment fragment) {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction tr = fm.beginTransaction();
-        tr.replace(R.id.activity_main_container, fragment);
-        tr.commitAllowingStateLoss();
-    }
-
     @Override
-    public void onReadyMedia(MediaModel mediaModel, String mediaType, String mediaTypeDetail) {
-        Toast.makeText(this, "Dosya seçildi.\n" + mediaModel.getFile().getAbsolutePath() + "\n" + mediaType + "\n" + mediaTypeDetail, Toast.LENGTH_SHORT).show();
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GalleryActivity.GALLERY_REQUEST_CODE) {
+
+            if (resultCode == GalleryActivity.GALLERY_RESULT_PERMISSION_CANCEL){
+                Toast.makeText(this, "Cancelled.", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == GalleryActivity.GALLERY_RESULT_PERMISSION_ERROR){
+                Toast.makeText(this, "Permission Error.", Toast.LENGTH_SHORT).show();
+            } else if (resultCode == GalleryActivity.GALLERY_RESULT_SUCCESS){
+                String path = data.getStringExtra(GalleryActivity.FILE_PATH);
+                Toast.makeText(this, path, Toast.LENGTH_SHORT).show();
+            }
+
+        }
     }
 }
