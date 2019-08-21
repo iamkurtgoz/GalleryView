@@ -4,18 +4,13 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,9 +24,8 @@ import com.iamkurtgoz.galleryview.tools.GalleryCheckPermission;
 import com.iamkurtgoz.galleryview.tools.GalleryMediaType;
 import com.iamkurtgoz.galleryview.tools.GalleryTools;
 import com.iamkurtgoz.galleryview.view.SpacingItemDecoration;
-import com.iamkurtgoz.galleryview.R;
+
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class GalleryActivity extends AppCompatActivity implements GalleryAdapter.ClickListener {
 
@@ -73,7 +67,7 @@ public class GalleryActivity extends AppCompatActivity implements GalleryAdapter
         super.onCreate(savedInstanceState);
         defaultPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         externalPath = defaultPath;
-        setContentView(R.layout.activity_gallery);
+        setContentView(R.layout.lib_galleryview_activity_gallery);
         initGalleryMediaType();
         init();
         initToolbar(false, defaultPath, 0);
@@ -98,9 +92,9 @@ public class GalleryActivity extends AppCompatActivity implements GalleryAdapter
     }
 
     private void init(){
-        toolbar = findViewById(R.id.activity_gallery_toolbar);
-        recyclerView = findViewById(R.id.activity_gallery_recyclerView);
-        progressContainer = findViewById(R.id.activity_gallery_progressContainer);
+        toolbar = findViewById(R.id.lib_galleryview_activity_gallery_toolbar);
+        recyclerView = findViewById(R.id.lib_galleryview_activity_gallery_recyclerView);
+        progressContainer = findViewById(R.id.lib_galleryview_activity_gallery_progressContainer);
     }
 
     private void initToolbar(boolean isBack, String title, int totalItems){

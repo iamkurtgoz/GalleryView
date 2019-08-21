@@ -39,7 +39,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryHolder> {
     @NonNull
     @Override
     public GalleryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new GalleryHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_gallery_row, parent, false));
+        return new GalleryHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.lib_galleryview_list_item_gallery_row, parent, false));
     }
 
     @Override

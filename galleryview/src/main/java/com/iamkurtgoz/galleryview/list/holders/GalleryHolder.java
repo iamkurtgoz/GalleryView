@@ -19,11 +19,11 @@ public class GalleryHolder extends RecyclerView.ViewHolder {
     public GalleryHolder(@NonNull View itemView) {
         super(itemView);
 
-        container = itemView.findViewById(R.id.list_item_gallery_container);
-        imgHeader = itemView.findViewById(R.id.list_item_gallery_imgHeader);
-        textExt = itemView.findViewById(R.id.list_item_gallery_textExt);
-        textTitle = itemView.findViewById(R.id.list_item_gallery_textTitle);
-        textDate = itemView.findViewById(R.id.list_item_gallery_textDate);
-        textDetail = itemView.findViewById(R.id.list_item_gallery_textDetail);
+        container = itemView.findViewById(R.id.lib_galleryview_list_item_gallery_container);
+        imgHeader = itemView.findViewById(R.id.lib_galleryview_list_item_gallery_imgHeader);
+        textExt = itemView.findViewById(R.id.lib_galleryview_list_item_gallery_textExt);
+        textTitle = itemView.findViewById(R.id.lib_galleryview_list_item_gallery_textTitle);
+        textDate = itemView.findViewById(R.id.lib_galleryview_list_item_gallery_textDate);
+        textDetail = itemView.findViewById(R.id.lib_galleryview_list_item_gallery_textDetail);
     }
 }

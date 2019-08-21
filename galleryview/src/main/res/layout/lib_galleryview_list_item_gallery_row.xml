@@ -1,6 +1,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list_item_gallery_container"
+    android:id="@+id/lib_galleryview_list_item_gallery_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackgroundBorderless"
@@ -11,7 +11,7 @@
     android:paddingEnd="@dimen/minimal_material_padding">
 
     <RelativeLayout
-        android:id="@+id/icon_frame_parent"
+        android:id="@+id/lib_galleryview_icon_frame_parent"
         android:layout_width="@dimen/minimal_icon_parent_width"
         android:layout_height="@dimen/minimal_row_size"
         android:layout_alignParentStart="true"
@@ -28,7 +28,7 @@
                 android:scaleType="centerCrop" />
 
             <ImageView
-                android:id="@+id/list_item_gallery_imgHeader"
+                android:id="@+id/lib_galleryview_list_item_gallery_imgHeader"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:padding="8dp"
@@ -36,7 +36,7 @@
                 android:layout_gravity="center_vertical"/>
 
             <TextView
-                android:id="@+id/list_item_gallery_textExt"
+                android:id="@+id/lib_galleryview_list_item_gallery_textExt"
                 android:layout_width="@dimen/minimal_icon_size"
                 android:layout_height="@dimen/minimal_icon_size"
                 android:textSize="12dp"
@@ -49,7 +49,7 @@
         </FrameLayout>
 
         <ImageView
-            android:id="@+id/list_item_gallery_imgCheck"
+            android:id="@+id/lib_galleryview_list_item_gallery_imgCheck"
             android:layout_width="@dimen/tick_icon_size"
             android:layout_height="@dimen/tick_icon_size"
             android:padding="@dimen/check_icon_padding"
@@ -64,7 +64,7 @@
     </RelativeLayout>
 
     <ImageButton
-        android:id="@+id/list_item_gallery_imgProperties"
+        android:id="@+id/lib_galleryview_list_item_gallery_imgProperties"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ripple"
@@ -74,16 +74,16 @@
         android:visibility="invisible"/>
 
     <RelativeLayout
-        android:layout_toRightOf="@id/icon_frame_parent"
-        android:layout_toEndOf="@id/icon_frame_parent"
-        android:layout_toLeftOf="@id/list_item_gallery_imgProperties"
-        android:layout_toStartOf="@id/list_item_gallery_imgProperties"
+        android:layout_toRightOf="@id/lib_galleryview_icon_frame_parent"
+        android:layout_toEndOf="@id/lib_galleryview_icon_frame_parent"
+        android:layout_toLeftOf="@id/lib_galleryview_list_item_gallery_imgProperties"
+        android:layout_toStartOf="@id/lib_galleryview_list_item_gallery_imgProperties"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true">
 
         <TextView
-            android:id="@+id/list_item_gallery_textTitle"
+            android:id="@+id/lib_galleryview_list_item_gallery_textTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -99,11 +99,11 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/list_item_gallery_textTitle"
+            android:layout_below="@id/lib_galleryview_list_item_gallery_textTitle"
             android:layout_marginTop="5dp">
 
             <TextView
-                android:id="@+id/list_item_gallery_textDate"
+                android:id="@+id/lib_galleryview_list_item_gallery_textDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
@@ -116,7 +116,7 @@
                 />
 
             <TextView
-                android:id="@+id/list_item_gallery_textDetail"
+                android:id="@+id/lib_galleryview_list_item_gallery_textDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

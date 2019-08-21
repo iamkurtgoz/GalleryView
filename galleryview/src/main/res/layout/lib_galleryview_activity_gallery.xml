@@ -9,9 +9,9 @@
     tools:ignore="MissingPrefix">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/activity_gallery_toolbar"
+        android:id="@+id/lib_galleryview_activity_gallery_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
+        android:layout_height="wrap_content"
         app:navigationIcon="@drawable/galleryview_ic_arrow_black"
         app:title="@string/app_name"
         app:subtitle="@string/app_name"/>
@@ -21,7 +21,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/activity_gallery_recyclerView"
+            android:id="@+id/lib_galleryview_activity_gallery_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
@@ -31,7 +31,7 @@
             android:background="@drawable/shadow_top"/>
 
         <FrameLayout
-            android:id="@+id/activity_gallery_progressContainer"
+            android:id="@+id/lib_galleryview_activity_gallery_progressContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone">
