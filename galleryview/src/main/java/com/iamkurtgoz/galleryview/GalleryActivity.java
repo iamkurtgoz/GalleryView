@@ -29,7 +29,7 @@ import com.iamkurtgoz.galleryview.tools.GalleryCheckPermission;
 import com.iamkurtgoz.galleryview.tools.GalleryMediaType;
 import com.iamkurtgoz.galleryview.tools.GalleryTools;
 import com.iamkurtgoz.galleryview.view.SpacingItemDecoration;
-
+import com.iamkurtgoz.galleryview.R;
 import java.util.ArrayList;
 import java.util.Collections;
 

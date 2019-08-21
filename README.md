@@ -20,7 +20,7 @@ allprojects {
 ### Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.iamkurtgoz:GalleryView:1.0.2'
+    implementation 'com.github.iamkurtgoz:GalleryView:1.0.3'
 }
 ```
 ### Step 3. Add read permission
